@@ -9,7 +9,7 @@
     <!-- Include html2pdf.js from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <style>
-        /* Custom styling for the div container */
+        
         .multiline-content {
             white-space: pre-wrap; /* Preserve white spaces and wrap lines */
             font-family: 'Times New Roman', Times, serif, sans-serif; /* Choose your preferred font */
@@ -17,20 +17,20 @@
             line-height: 1.5; /* Set the line height */
             margin-bottom: 10px; /* Add spacing between the div containers */
         }
-                /* Additional Custom Styles Go Here */
+               
 
         .custom-list-group {
-            background-color: #eff3f8; /* Change this color to your desired background color */
+            background-color: #eff3f8; 
         }
 
-        /* Override Bootstrap's default styling for small screens */
+       
         @media (max-width: 576px) {
-            /* Add specific styles for small screens */
+
         }
 
         .custom-link {
-            text-decoration: underline; /* Underline the text */
-            color: #007bff; /* Set the link color to blue */
+            text-decoration: underline;
+            color: #007bff;
         }
     </style>
 </head>
@@ -80,11 +80,11 @@
 
     <script>
         function submitForm() {
-            // Get form data
+           
             const neya = document.getElementById('neya').value;
             const moshar = document.getElementById('moshar').value;
             const tawba = document.getElementById('tawba').value;           
-            // Add more fields as needed
+           
 
             // Create PDF
             const content = `
@@ -93,7 +93,7 @@
                 <div class="multiline-content">ديوان النيات<br> ${neya}</div>
                 <div class="multiline-content">ديوان المشارطة و المحاسبة<br> ${moshar}</div>
                 <div class="multiline-content">ديوان الإستغفار والتوبة<br> ${tawba}</div>                
-                <!-- Add more fields as needed -->
+              
             `;
 
             html2pdf(content, {
