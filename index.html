@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="rtl"style=background-color:"yellow">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +9,19 @@
     <!-- Include html2pdf.js from CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     <style>
-        
         .multiline-content {
-            white-space: pre-wrap; /* Preserve white spaces and wrap lines */
-            font-family: 'Times New Roman', Times, serif, sans-serif; /* Choose your preferred font */
-            font-size: 25px; /* Set the font size */
-            line-height: 1.5; /* Set the line height */
-            margin-bottom: 10px; /* Add spacing between the div containers */
+            white-space: pre-wrap;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            font-size: 25px;
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
-               
 
         .custom-list-group {
-            background-color: #eff3f8; 
+            background-color: #eff3f8;
         }
 
-       
         @media (max-width: 576px) {
-
         }
 
         .custom-link {
@@ -37,21 +33,25 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-4">الوفادة إلى الله كأنك تراه</h1>
-
         <h2 class="text-center mb-4">قوائم الدواوين</h2>
-
         <div class="row">
             <div class="col-md-4">
                 <div class="list-group custom-list-group">
-
                     <a href="https://youtu.be/5PWdKMVzetk?si=BJ67rpLlhVvAxDIb" class="list-group-item custom-link" target="_blank" style="border-style:solid">
                         درس الوفادة إلى الله كأنك تراه - الجزء الأول - المعاني الباطنة
                     </a>
-                    <a href="https://www.youtube.com/watch?v=NsXRUW6C8sA&list=PLA-HKHgTp9AGFyMuSwVt0Y4zr6_RlusHe&index=4" class="list-group-item custom-link" target="_blank"style="border-style:solid">
+                    <a href="https://www.youtube.com/watch?v=NsXRUW6C8sA&list=PLA-HKHgTp9AGFyMuSwVt0Y4zr6_RlusHe&index=4" class="list-group-item custom-link" target="_blank" style="border-style:solid">
                         درس الوفادة إلى الله كأنك تراه - الجزء الثاني - الأعمال الظاهرة
                     </a>
-                    <a href="omra.jpg" class="list-group-item custom-link" target="_blank"style="border-style:solid">خريطة مناسك العمرة</a>
-                    <a href="https://drive.google.com/file/d/1-i1Rka4Tx4RS10xQeYLpGAc5ugUQhnpo/view" class="list-group-item custom-link" target="_blank"style="border-style:solid">
+                    <a href="https://www.youtube.com/watch?v=DuXOEmGVaPo&t=3127s" class="list-group-item custom-link" target="_blank" style="border-style:solid">
+                        درس الوفادة إلى الله كأنك تراه - الجزء الثالث - الأعمال الظاهرة
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=un8gsFbVGGs" class="list-group-item custom-link" target="_blank" style="border-style:solid">
+                        درس الوفادة إلى الله كأنك تراه - الجزء الرابع - الأعمال الظاهرة
+                    </a>
+                    <a href="haj.jpg" class="list-group-item custom-link" target="_blank" style="border-style:solid">خريطة مناسك الحج</a>
+                    <a href="omra.jpg" class="list-group-item custom-link" target="_blank" style="border-style:solid">خريطة مناسك العمرة</a>
+                    <a href="https://drive.google.com/file/d/1-i1Rka4Tx4RS10xQeYLpGAc5ugUQhnpo/view" class="list-group-item custom-link" target="_blank" style="border-style:solid">
                         كتاب الوفادة إلى الله كأنك تراه
                     </a>
                 </div>
@@ -60,49 +60,91 @@
                 <form id="myForm" class="mt-4">
                     <div class="mb-3">
                         <label for="neya" class="form-label">ديوان النيات:</label>
-                        <textarea class="form-control" id="neya" name="neya" rows="4" ></textarea>
+                        <textarea class="form-control" id="neya" name="neya" rows="4"></textarea>
                     </div>
                     <div class="mb-3">
                         <label for="tawba" class="form-label">ديوان الإستغفار والتوبة:</label>
-                        <textarea class="form-control" id="tawba" name="tawba" rows="4" ></textarea>
+                        <textarea class="form-control" id="tawba" name="tawba" rows="4"></textarea>
                     </div>
-
                     <div class="mb-3">
                         <label for="moshar" class="form-label">ديوان المشارطة و المحاسبة:</label>
-                        <textarea class="form-control" id="moshar" name="moshar" rows="4" ></textarea>
+                        <textarea class="form-control" id="moshar" name="moshar" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="shkaya" class="form-label">ديوان الشكايات:</label>
+                        <textarea class="form-control" id="shkaya" name="shkaya" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dawa1" class="form-label">ديوان الدعوات "أ":<br>الثناء على الله تعالى مضمنا الحاجات<br>الصلاة على النبي صلى الله عليه وسلم</label>
+                        <textarea class="form-control" id="dawa1" name="dawa1" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dawa2" class="form-label">ديوان الدعوات "ب":<br>لأصحاب الحقوق:-<br>-الوالدين وابائهم <br>  -الأهل و الولد <br> -أئمة أهل السنة و علمائهم ومجاهديهم</label>
+                        <textarea class="form-control" id="dawa2" name="dawa2" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dawa3" class="form-label">ديوان الدعوات "ج":<br>للخلق جميعا من الإنس و الجن</label>
+                        <textarea class="form-control" id="dawa3" name="dawa3" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dawa4" class="form-label">ديوان الدعوات "د":<br>لنفسك خوفا"رهبة"وطمعا"رغبة"</label>
+                        <textarea class="form-control" id="dawa4" name="dawa4" rows="4"></textarea>
                     </div>
 
-                    <button type="button" onclick="submitForm()" class="btn btn-primary">تحميل القائمة</button>
+                    <button type="button" onclick="generatePDF()" class="btn btn-primary">تحميل القائمة</button>
+                    <button type="button" onclick="sendToWhatsApp()" class="btn btn-success">إرسال إلى WhatsApp</button>
                 </form>
             </div>
         </div>
     </div>
 
     <script>
-        function submitForm() {
-           
+        function generatePDF() {
             const neya = document.getElementById('neya').value;
             const moshar = document.getElementById('moshar').value;
-            const tawba = document.getElementById('tawba').value;           
-           
-
-            // Create PDF
+            const tawba = document.getElementById('tawba').value;
+            const shkaya = document.getElementById('shkaya').value;
+            const dawa1 = document.getElementById('dawa1').value;
+            const dawa2 = document.getElementById('dawa2').value;
+            const dawa3 = document.getElementById('dawa3').value;
+            const dawa4 = document.getElementById('dawa4').value;                        
             const content = `
-                <h1 class="text-center">الوفادة إلى الله</h1>
+            <h1 class="text-center">الوفادة إلى الله</h1>
                 <h2 class="text-center">قوائم الدواوين</h2>   
                 <div class="multiline-content">ديوان النيات<br> ${neya}</div>
+                <div style="page-break-before: always;"></div>
                 <div class="multiline-content">ديوان المشارطة و المحاسبة<br> ${moshar}</div>
-                <div class="multiline-content">ديوان الإستغفار والتوبة<br> ${tawba}</div>                
-              
+                <div style="page-break-before: always;"></div>
+                <div class="multiline-content">ديوان الإستغفار والتوبة<br> ${tawba}</div> 
+                <div style="page-break-before: always;"></div>
+                <div class="multiline-content">ديوان الشكايات<br> ${shkaya}</div> 
+                <div style="page-break-before: always;"></div>
+                <div class="multiline-content">ديوان الدعوات<br> ${dawa1}<br> ${dawa2}<br> ${dawa3}<br> ${dawa4}</div> 
+                <div style="page-break-before: always;"></div>
             `;
 
             html2pdf(content, {
                 margin: 10,
                 filename: 'قائمة_الدواوين.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 4 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             });
+        }
+
+        function sendToWhatsApp() {
+            const neya = encodeURIComponent(document.getElementById('neya').value);
+            const moshar = encodeURIComponent(document.getElementById('moshar').value);
+            const tawba = encodeURIComponent(document.getElementById('tawba').value);
+            const shkaya = encodeURIComponent(document.getElementById('shkaya').value);  
+            const dawa1 = encodeURIComponent(document.getElementById('dawa1').value);                      
+            const dawa2 = encodeURIComponent(document.getElementById('dawa2').value);
+            const dawa3 = encodeURIComponent(document.getElementById('dawa3').value);                      
+            const dawa4 = encodeURIComponent(document.getElementById('dawa4').value);             
+
+            const message = `ديوان النيات:\n${neya}\n%0Aديوان المشارطة و المحاسبة:\n${moshar}\n%0Aديوان الإستغفار والتوبة:\n ${tawba}\n%0Aديوان الشكايات:\n${shkaya}\n%0Aديوان الدعوات:\n${dawa1}\n%0A${dawa2}\n%0A${dawa3}\n%0A${dawa4}\n`;
+
+            window.open(`https://wa.me/?text=${message}`, '_blank');
         }
     </script>
 </body>
