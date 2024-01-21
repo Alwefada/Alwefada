@@ -118,21 +118,16 @@
                 <div style="page-break-before: always;"></div>
             `;
 
-            const pdfPromise = new Promise((resolve, reject) => {
-        html2pdf(content, {
-            margin: 10,
-            filename: 'قائمة_الدواوين.pdf',
-            image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 4 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-            onrendered: resolve, // Resolve the promise when rendering is complete
-        });
-    });
-    pdfPromise.then(() => {
-        sendWhatsAppLink(neya, moshar, tawba);
-    });
-}
-
+            html2pdf(content, {
+                margin: 10,
+                filename: 'قائمة_الدواوين.pdf',
+                image: { type: 'jpeg', quality: 1 },
+                html2canvas: { scale: 4 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+    </script>
+    <script>
         function sendToWhatsApp() {
             const neya = encodeURIComponent(document.getElementById('neya').value);
             const moshar = encodeURIComponent(document.getElementById('moshar').value);
