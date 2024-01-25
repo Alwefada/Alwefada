@@ -132,16 +132,16 @@
     </script>
     <script>
         function sendToWhatsApp() {
-            const neya = encodeURIComponent(document.getElementById('neya').value);
-            const moshar = encodeURIComponent(document.getElementById('moshar').value);
-            const tawba = encodeURIComponent(document.getElementById('tawba').value);
-            const shkaya = encodeURIComponent(document.getElementById('shkaya').value);  
-            const dawa1 = encodeURIComponent(document.getElementById('dawa1').value);                      
-            const dawa2 = encodeURIComponent(document.getElementById('dawa2').value);
-            const dawa3 = encodeURIComponent(document.getElementById('dawa3').value);                      
-            const dawa4 = encodeURIComponent(document.getElementById('dawa4').value);             
+            const neya1 = encodeURIComponent(document.getElementById('neya').value);
+            const moshar1 = encodeURIComponent(document.getElementById('moshar').value);
+            const tawba1 = encodeURIComponent(document.getElementById('tawba').value);
+            const shkaya1 = encodeURIComponent(document.getElementById('shkaya').value);  
+            const dawa11 = encodeURIComponent(document.getElementById('dawa1').value);                      
+            const dawa21 = encodeURIComponent(document.getElementById('dawa2').value);
+            const dawa31 = encodeURIComponent(document.getElementById('dawa3').value);                      
+            const dawa41 = encodeURIComponent(document.getElementById('dawa4').value);             
 
-            const message = `ديوان النيات:\n${neya}\n%0Aديوان المشارطة و المحاسبة:\n${moshar}\n%0Aديوان الإستغفار والتوبة:\n ${tawba}\n%0Aديوان الشكايات:\n${shkaya}\n%0Aديوان الدعوات:\n${dawa1}\n%0A${dawa2}\n%0A${dawa3}\n%0A${dawa4}\n`;
+            const message = `ديوان النيات:\n${neya1}\n%0Aديوان المشارطة و المحاسبة:\n${moshar1}\n%0Aديوان الإستغفار والتوبة:\n ${tawba1}\n%0Aديوان الشكايات:\n${shkaya1}\n%0Aديوان الدعوات:\n${dawa11}\n%0A${dawa21}\n%0A${dawa31}\n%0A${dawa41}\n`;
 
             window.open(`https://wa.me/?text=${message}`, '_blank');
         }
