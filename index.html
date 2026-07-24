@@ -270,7 +270,7 @@
 
 <header class="site-header">
     <h1>الوفادة إلى الله كأنك تراه</h1>
-    <div class="subtitle">قوائم الدواوين — رفيقك في رحلة الحج والعمرة</div>
+    <div class="subtitle">قوائم الدواوين — رفيقك في تدوين قلبك خلال رحلة الحج والعمرة</div>
     <div class="arabesque-divider"></div>
 </header>
 
@@ -466,32 +466,91 @@
     }
 
     // ---- PDF export ----
+    function pdfPage(num, title, hint, bodyText, isLast){
+        return `
+        <div style="
+            font-family:'Tajawal', Arial, sans-serif;
+            direction:rtl;
+            background:#faf6ee;
+            padding:34px 30px;
+            min-height:277mm;
+            box-sizing:border-box;
+            ${isLast ? '' : 'page-break-after: always;'}
+        ">
+            <div style="display:flex; align-items:center; gap:14px; border-bottom:2px solid #a9803f; padding-bottom:14px; margin-bottom:18px;">
+                <div style="
+                    width:44px; height:44px; min-width:44px;
+                    border-radius:50%;
+                    background:#f1ead9;
+                    border:2px solid #d8c39a;
+                    color:#a9803f;
+                    font-family:'Aref Ruqaa', serif;
+                    font-size:24px;
+                    display:flex; align-items:center; justify-content:center;
+                ">${num}</div>
+                <div>
+                    <div style="font-family:'Aref Ruqaa', serif; font-size:24px; color:#20362f; font-weight:700;">${title}</div>
+                    ${hint ? `<div style="font-size:12.5px; color:#3d5a4f; line-height:1.8; margin-top:2px;">${hint}</div>` : ''}
+                </div>
+            </div>
+            <div style="
+                white-space:pre-wrap;
+                font-size:16px;
+                line-height:2.1;
+                color:#2a2a26;
+                background:#ffffff;
+                border:1px solid #f1ead9;
+                border-radius:10px;
+                padding:20px 22px;
+                min-height:180mm;
+            ">${bodyText || '<span style="color:#b7b2a4;">— لم يُكتب شيء بعد —</span>'}</div>
+        </div>`;
+    }
+
     function generatePDF() {
         const vals = {};
         fieldIds.forEach(id => vals[id] = document.getElementById(id).value);
 
-        const content = `
-            <div style="font-family:'Times New Roman', Arial, sans-serif; direction:rtl;">
-            <h1 style="text-align:center;">الوفادة إلى الله</h1>
-            <h2 style="text-align:center;">قوائم الدواوين</h2>
-            <div style="white-space:pre-wrap; font-size:20px; line-height:1.6; margin-bottom:10px;">ديوان النيات<br>${vals.neya}</div>
-            <div style="page-break-before: always;"></div>
-            <div style="white-space:pre-wrap; font-size:20px; line-height:1.6; margin-bottom:10px;">ديوان الإستغفار والتوبة<br>${vals.tawba}</div>
-            <div style="page-break-before: always;"></div>
-            <div style="white-space:pre-wrap; font-size:20px; line-height:1.6; margin-bottom:10px;">ديوان المشارطة والمحاسبة<br>${vals.moshar}</div>
-            <div style="page-break-before: always;"></div>
-            <div style="white-space:pre-wrap; font-size:20px; line-height:1.6; margin-bottom:10px;">ديوان الشكايات<br>${vals.shkaya}</div>
-            <div style="page-break-before: always;"></div>
-            <div style="white-space:pre-wrap; font-size:20px; line-height:1.6; margin-bottom:10px;">ديوان الدعوات<br>${vals.dawa1}<br>${vals.dawa2}<br>${vals.dawa3}<br>${vals.dawa4}</div>
-            </div>
-        `;
+        const coverPage = `
+        <div style="
+            font-family:'Tajawal', Arial, sans-serif;
+            direction:rtl;
+            background:#faf6ee;
+            min-height:277mm;
+            box-sizing:border-box;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:40px;
+            page-break-after: always;
+        ">
+            <div style="font-family:'Aref Ruqaa', serif; font-weight:700; font-size:40px; color:#20362f; margin-bottom:10px;">الوفادة إلى الله كأنك تراه</div>
+            <div style="font-size:15px; color:#3d5a4f; margin-bottom:26px;">قوائم الدواوين — سِجل قلبك في رحلة الحج والعمرة</div>
+            <div style="width:220px; height:2px; background:#a9803f; opacity:0.6;"></div>
+        </div>`;
+
+        const pages = [
+            pdfPage('١', 'ديوان النيات', 'نيات عامة، ونيات خاصة لبعض الأعمال، مثل: أشواط الطواف — شرب زمزم — أشواط السعي', vals.neya),
+            pdfPage('٢', 'ديوان الإستغفار والتوبة', '', vals.tawba),
+            pdfPage('٣', 'ديوان المشارطة والمحاسبة', '', vals.moshar),
+            pdfPage('٤', 'ديوان الشكايات', '', vals.shkaya),
+            pdfPage('٥', 'ديوان الدعوات "أ"', 'الثناء على الله تعالى مضمّنًا الحاجات — الصلاة على النبي ﷺ', vals.dawa1),
+            pdfPage('٦', 'ديوان الدعوات "ب"', 'لأصحاب الحقوق: الوالدين وآبائهم — الأهل والولد — أئمة أهل السنة وعلمائهم ومجاهديهم', vals.dawa2),
+            pdfPage('٧', 'ديوان الدعوات "ج"', 'للخلق جميعًا من الإنس والجن', vals.dawa3),
+            pdfPage('٨', 'ديوان الدعوات "د"', 'لنفسك: خوفًا "رهبة" وطمعًا "رغبة"', vals.dawa4, true),
+        ];
+
+        const content = coverPage + pages.join('');
 
         html2pdf(content, {
-            margin: 10,
+            margin: 0,
             filename: 'قائمة_الدواوين.pdf',
             image: { type: 'jpeg', quality: 1 },
-            html2canvas: { scale: 3 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            html2canvas: { scale: 3, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+            pagebreak: { mode: ['css'] }
         });
     }
 
